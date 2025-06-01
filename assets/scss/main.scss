@@ -1,0 +1,225 @@
+@use './reset';
+@use './variables' as *;
+@use './mixin' as *;
+@use './font-face' as *;
+
+// @include fontFace('interR', '../fonts/static/Inter-Regular.woff2', 400);
+// @include fontFace('interSM', '../fonts/static/Inter-SemiBold.woff2', 600);
+@include fontFace('inter', '../fonts/Inter-VariableFont_slnt,wght.woff2', 100 900);
+
+body {
+  font-family: inter, sans-serif;
+  padding: $space-400 $space-300;
+}
+
+.wrappers__heads {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: $space-300;
+}
+
+.heads__image {
+  inline-size:  clamp(2.5rem, 1.972rem + 2.254vw, 4rem); 
+  margin-block: $space-200;
+}
+
+.heads__title {
+  @include tgSize( clamp(3rem, -2rem + 8vw, 4rem), 600);
+  color: $blue900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.heads__subtitle {
+  @include tgSize($text-6, 400);
+  color: $grey500;
+  text-align: center;
+}
+
+.heads__below {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: $space-300;
+  margin-block: $space-400;
+  padding: $space-300;
+}
+
+.below__title {
+  @include tgSize($text-4, 600);
+  color: $blue900;
+  text-align: center;
+}
+
+.below__option {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(8rem, 1fr));
+  gap: $space-300;
+}
+
+.below__radios {
+  display: flex;
+  align-items: center;
+  gap: $space-200;
+  @include tgSize($text-6, 600);
+  color: $blue900;
+  text-align: center;
+}
+
+.below__radio {
+  appearance: none;
+  -webkit-appearance: none;
+  inline-size: 1.938rem;
+  block-size: 1.938rem;
+  border: 1px solid $grey500;
+  box-shadow: .3px .3px 5px rgba(0, 0, 0, .3) inset, -.3px -.3px 4px rgba(0, 0, 0, .3) inset;
+  border-radius: 50%;
+}
+
+.below__radio:checked {
+  appearance: none;
+  border: none;
+  inline-size: .938rem;
+  block-size: .938rem;
+  background-color: $blue500;
+}
+
+.below__details {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: $space-200;
+}
+
+.below__details--metric {
+  inline-size: min(17.5rem, 100%);
+} 
+
+.below__dates {
+  @include tgSize($text-7, 400);
+  color: $grey500;
+  line-height: 1.2;
+}
+
+.below__box-i,
+.below__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $blue900;
+  border-radius: $space-150;
+  padding: $space-300;
+  margin-block-start: $space-100; 
+}
+
+.below__units {
+  @include tgSize($text-4, 600);
+  color: $blue500;
+}
+
+.below__inputs {
+  inline-size: 12.5rem;
+  @include tgSize($text-4, 600);
+  color: $blue900;
+  line-height: 1;
+}
+
+.below__imperial {
+  display: grid;
+  grid-template-columns: repeat(2, 132px);
+  justify-items: center;
+  align-items: end;
+  gap: 1rem;
+}
+
+.below__dates-i {
+  inline-size: min(132px, 100%);
+  line-height: 1.2;
+}
+
+.below__inputs-i {
+  inline-size: 2.5rem;
+  @include tgSize($text-4, 600);
+  color: $blue900;
+  line-height: 1;
+}
+
+.below__results {
+  inline-size: min(17.5rem, 100%);
+  background-color: $blue500;
+  border-radius: $space-200;
+  color: $white-color;
+  display: grid;
+  gap: $space-300;
+  padding: $space-400;
+}
+
+.results__title {
+  @include tgSize($text-6, 600);
+}
+
+.results__score {
+  @include tgSize($text-2,600);
+  line-height: 1.2;
+}
+
+.results__details {
+  @include tgSize($text-7, 400);
+}
+
+.details__bold {
+  @include tgSize($text-6, 600);
+}
+
+.wrappers__means {
+  margin-block: $space-400;
+  display: grid;
+  gap: $space-600;
+}
+
+.means__descriptions {
+  display: grid;
+  gap: $space-400;
+}
+
+.descriptions__title {
+  @include tgSize(clamp(2rem, 0.333rem + 2.963vw, 3rem), 600);
+  color: $blue900;
+}
+
+.descriptions__lead {
+  @include tgSize($text-6, 400);
+  color: $grey500;
+}
+
+.wrappers__suggests {
+  display: grid;
+  gap: $space-500;
+  padding: $space-600 $space-300;
+}
+
+.suggests__items {
+  display: grid;
+  gap: $space-400;
+}
+
+.suggests__text {
+  display: grid;
+  gap: $space-300;
+}
+
+.suggests__title {
+  @include tgSize($text-4, 600);
+  color: $blue900;
+}
+
+.suggests__description {
+  @include tgSize($text-6, 400);
+  color: $grey500;
+}
+
+.display__none {
+  display: none;
+}
+
