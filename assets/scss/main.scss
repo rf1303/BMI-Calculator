@@ -9,7 +9,7 @@
 
 body {
   font-family: inter, sans-serif;
-  padding: $space-400 $space-300;
+  padding-block: $space-400;
 }
 
 .wrappers__heads {
@@ -17,6 +17,7 @@ body {
   justify-items: center;
   align-items: center;
   gap: $space-300;
+  padding-inline: $space-300;
 }
 
 .heads__image {
@@ -44,6 +45,7 @@ body {
   gap: $space-300;
   margin-block: $space-400;
   padding: $space-300;
+  border: 2px solid #000;
 }
 
 .below__title {
@@ -85,18 +87,17 @@ body {
   background-color: $blue500;
 }
 
-.below__details {
+.below__details--metric {
   display: grid;
+  grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
   gap: $space-200;
 }
 
-.below__details--metric {
-  inline-size: min(17.5rem, 100%);
-} 
 
 .below__dates {
+  inline-size: clamp(17.5rem, 0.25rem + 65.714vw, 29rem); 
   @include tgSize($text-7, 400);
   color: $grey500;
   line-height: 1.2;
@@ -107,6 +108,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: $space-100;
   border: 1px solid $blue900;
   border-radius: $space-150;
   padding: $space-300;
@@ -119,7 +121,8 @@ body {
 }
 
 .below__inputs {
-  inline-size: 12.5rem;
+  flex: 1;
+  min-width: 0;
   @include tgSize($text-4, 600);
   color: $blue900;
   line-height: 1;
@@ -127,14 +130,16 @@ body {
 
 .below__imperial {
   display: grid;
-  grid-template-columns: repeat(2, 132px);
+  grid-template-columns: repeat(2, 8.25rem);
   justify-items: center;
   align-items: end;
   gap: 1rem;
 }
 
 .below__dates-i {
-  inline-size: min(132px, 100%);
+  color: $grey500;
+  @include tgSize($text-7, 400);
+  inline-size: min(8.25rem, 100%);
   line-height: 1.2;
 }
 
@@ -146,7 +151,8 @@ body {
 }
 
 .below__results {
-  inline-size: min(17.5rem, 100%);
+  inline-size: clamp(17.5rem, 0.25rem + 65.714vw, 29rem); 
+  // inline-size: min(17.5rem, 80%);
   background-color: $blue500;
   border-radius: $space-200;
   color: $white-color;
@@ -175,11 +181,14 @@ body {
 .wrappers__means {
   margin-block: $space-400;
   display: grid;
+  align-items: center;
   gap: $space-600;
+  padding-inline: $space-300;
 }
 
 .means__descriptions {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: $space-400;
 }
 
@@ -211,6 +220,7 @@ body {
 
 .suggests__title {
   @include tgSize($text-4, 600);
+  letter-spacing: -5%;
   color: $blue900;
 }
 
@@ -219,7 +229,279 @@ body {
   color: $grey500;
 }
 
+.wrappers__limitations {
+  inline-size: min(20.438rem, 100%);
+  display: grid;
+  gap: $space-200;
+  padding-block: $space-1000;
+  padding-inline-start: $space-275;
+}
+
+.bmi__title {
+  @include tgSize($text-3, 600);
+  color: $blue900;
+  margin-block-end: $space-400;
+}
+
+.bmi__lead {
+  @include tgSize($text-6, 400);
+  color: $grey500;
+}
+
+.limitations__bmi {
+  inline-size: min(20.438rem, 100%);
+  display: grid;
+  gap: $space-200;
+  padding: $space-300;
+}
+
+.limitations__head {
+  display: flex;
+  align-items: center;
+  gap: $space-200;
+}
+
+.limitations__title {
+  @include tgSize($text-5, 600);
+  color: $blue900;
+  letter-spacing: -5%;
+}
+
+.limitations__lead {
+  @include tgSize($text-6, 400);
+  color: $grey500;
+}
+
 .display__none {
   display: none;
 }
+
+@media (min-width: 46em) {
+  .wrappers__heads {
+    padding-inline: $space-500;
+    gap: $space-500;
+  } 
+  .heads__title {
+    inline-size: min(24rem, 100%);
+  }
+  .heads__below {
+    justify-items: normal;
+    gap: $space-400;
+    margin: $space-500;
+    /* padding: $space-400; */
+  }
+  .below__title {
+    text-align-last: left;
+  }
+  .below__details {
+    inline-size: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+    gap: $space-300;
+  }
+  .below__details--metric {
+    inline-size: max(38.875rem, 100%);
+    grid-template-columns: repeat(2, minmax(18.75rem, 1fr));
+  } 
+  .below__dates {
+    inline-size:  clamp(18.75rem, -5.9167rem + 49.3333vw, 28rem);
+  }
+  .below__details--imperial {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(6.625rem, 1fr));
+    justify-items: start;
+  }
+  .below__imperial {
+    grid-template-columns: repeat(2, minmax(18.75rem, 1fr));
+    gap: $space-300;
+  }
+  .below__dates-i {
+    inline-size: 100%;
+  }
+  .below__results {
+    inline-size: 100%;
+    border-radius: $space-175 $space-1300 $space-1300 $space-175;
+    grid-template-columns:repeat(2, 1fr);
+    justify-items: start;
+    align-items: center;
+  }
+  .wrappers__means {
+    inline-size: 52.563rem;
+    grid-template-columns: 27.813rem 20.688rem;
+    gap: $space-500;
+    translate: -12vi 0; 
+    padding: 0;
+  }
+  .descriptions__title {
+    line-height: 1.2;
+  }
+  .wrappers__suggests {
+    padding: $space-650 $space-500;
+  }
+  .suggests__items {
+    grid-template-columns: $space-800 1fr;
+    gap: $space-500;
+    align-items: center;
+  }
+  .wrappers__limitations {
+    inline-size: clamp(42.875rem, 17.1875rem + 57.0833vw, 60rem);
+    grid-template-columns: repeat(2,minmax(20.938rem, 1fr));
+    grid-template-rows: repeat(4,1fr);
+    gap: $space-200 $space-300;
+    justify-items: center;
+    align-items: center;
+    padding-inline: 0;
+    margin-inline: auto;
+
+  }
+  .limitations__ofbmi {
+    grid-column: span 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .limitations__gender {
+    block-size: min(14.5rem, 100%);
+  }
+
+  .limitations__age {
+    block-size: min(14.5rem, 100%);
+    align-content: baseline;
+  }
+
+  .limitations__muscle {
+    block-size: min(16rem, 100%);
+    align-content: baseline;
+  }
+
+  .limitations__pregnancy {
+    block-size: min(16rem, 100%);
+  }
+
+  .limitations__race {
+    block-size: min(14.5rem, 100%);
+    width: min(22.813rem, 100%);
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 75em) {
+  body {
+    padding-block: 5.5rem;
+  }
+  .wrappers__mains {
+    inline-size: min(72.5rem, 100%);
+    block-size: 35.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(35.25rem, 1fr));
+    justify-items: start;
+    align-items: star;
+    gap: $space-400;
+    margin-inline: auto;
+  }  
+  .wrappers__heads {
+    inline-size: min(35.25rem, 100%);
+    justify-items: start;
+    align-content: baseline;
+    padding: 0;
+  }
+  .heads__image {
+    margin: 0;
+  }
+  .heads__title {
+    inline-size: min(31.875rem, 100%);
+    text-align: left;
+    margin-block-start: 64px;
+  }
+  .heads__below {
+    inline-size: min(35.25rem, 100%);
+    block-size: min(29.75rem, 100%);
+    padding: $space-400;
+    margin: 0;
+    align-self: end;
+  }
+  .below__details--metric {
+    inline-size: min(31.125rem, 100%);
+    grid-template-columns: repeat(2, minmax(14.875rem, 1fr));
+  }
+  .below__dates {
+    inline-size: clamp(14.875rem, 14.8032rem + 0.0957vw, 15.5rem);
+
+  }
+  .wrappers__means {
+    block-size: min(41.938rem, 100%);
+    grid-template-columns: repeat(2, 1fr);
+    inline-size: 100%;
+    translate: 0 0;
+    margin-inline: auto;
+    padding-inline: $space-1700;
+  }
+  .means__image {
+    block-size: min(35.25rem, 100%);
+  }
+  .image__avatar {
+    block-size: min(29.25rem, 100%);
+    object-fit: contain;
+  }
+  .means__descriptions {
+    inline-size: min(29.063rem, 100%);
+    justify-self: end;
+  }
+  .descriptions__title {
+    font-size: 3rem;
+    font-family: 500;
+    letter-spacing: -1px;
+  }
+  .wrappers__suggests {
+    grid-template-columns: repeat(3, minmax(22.813rem, 1fr));
+    padding: $space-1200 $space-1600;
+  }
+  .suggests__items {
+    grid-template-columns: 1fr;
+  }
+  .wrappers__limitations {
+    inline-size: min(72.5rem, 100%);
+    margin: $space-1300 $space-1800; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-areas: 
+                        'bmi bmi bmi gender gender gender'
+                        ' .   .  age age    muscle muscle'
+                        ' . pregnancy pregnancy   race race   . ';
+  }
+  .limitations__ofbmi {
+    grid-area: bmi;
+  }
+  .limitations__gender {
+    grid-area: gender;
+  }
+  .limitations__age {
+    grid-area: age;
+  }
+  .limitations__muscle {
+    grid-area: muscle;
+  }
+  .limitations__pregnancy {
+    grid-area: pregnancy;
+  }
+  .limitations__race {
+    grid-area: race;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
