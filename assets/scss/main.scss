@@ -45,7 +45,6 @@ body {
   gap: $space-300;
   margin-block: $space-400;
   padding: $space-300;
-  border: 2px solid #000;
 }
 
 .below__title {
@@ -316,7 +315,7 @@ body {
     gap: $space-300;
   }
   .below__dates-i {
-    inline-size: 100%;
+    inline-size:  clamp(18.75rem, -5.9167rem + 49.3333vw, 28rem);
   }
   .below__results {
     inline-size: 100%;
@@ -416,7 +415,7 @@ body {
   }
   .heads__below {
     inline-size: min(35.25rem, 100%);
-    block-size: min(29.75rem, 100%);
+    block-size: min(29.75rem, auto);
     padding: $space-400;
     margin: 0;
     align-self: end;
@@ -427,7 +426,17 @@ body {
   }
   .below__dates {
     inline-size: clamp(14.875rem, 14.8032rem + 0.0957vw, 15.5rem);
+  }
 
+  .below__details--imperial {
+    inline-size: min(31.125rem, 100%);
+    grid-template-columns: repeat(2, minmax(14.875rem, 1fr));
+  }
+  .below__imperial {
+    grid-template-columns: repeat(2, minmax(14.875rem, 1fr));
+  }
+  .below__dates-i {
+    inline-size: clamp(14.875rem, 14.8032rem + 0.0957vw, 15.5rem);
   }
   .wrappers__means {
     block-size: min(41.938rem, 100%);
@@ -454,17 +463,22 @@ body {
     letter-spacing: -1px;
   }
   .wrappers__suggests {
+    inline-size: min(72.438rem, 100%);
     grid-template-columns: repeat(3, minmax(22.813rem, 1fr));
-    padding: $space-1200 $space-1600;
+    gap: $space-300;
+    padding-block: $space-1200;
+    padding-inline: 0;
+    margin-inline: auto; 
   }
   .suggests__items {
     grid-template-columns: 1fr;
   }
   .wrappers__limitations {
     inline-size: min(72.5rem, 100%);
-    margin: $space-1300 $space-1800; 
+    margin-block: $space-1300; 
+    margin-inline: auto;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
                         'bmi bmi bmi gender gender gender'
                         ' .   .  age age    muscle muscle'
@@ -472,21 +486,33 @@ body {
   }
   .limitations__ofbmi {
     grid-area: bmi;
+    block-size: min(11.313rem, 100%);
+    align-self: start;
   }
   .limitations__gender {
     grid-area: gender;
+    block-size: min(14.5rem, 100%);  
+    inline-size: min(22.813rem, 100%);
   }
   .limitations__age {
     grid-area: age;
+    block-size: min(11.5rem, 100%); 
+    inline-size: min(22.813rem, 100%);
   }
   .limitations__muscle {
     grid-area: muscle;
+    block-size: min(11.5rem, 100%); 
+    inline-size: min(22.813rem, 100%);
   }
   .limitations__pregnancy {
     grid-area: pregnancy;
+    block-size: min(14.5rem, 100%);
+    inline-size: min(22.813rem, 100%);
   }
   .limitations__race {
     grid-area: race;
+    block-size: min(14.5rem, 100%);  
+    inline-size: min(22.813rem, 100%);
   }
 }
 

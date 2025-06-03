@@ -1,11 +1,6 @@
 @use './variables' as *;
 
 
-// @mixin tgSize($size : 1.6rem, $weight : 300 ) {
-//   font-family: kumbh , kumbhttf, sans-serif;
-//   font-size: $size;
-//   font-weight: $weight;
-// }
 
 @mixin tgSize($size , $weight ) {
   font-size: $size;
