@@ -25,6 +25,23 @@ body {
   line-height: 1.5;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -235,9 +252,26 @@ body {
   font-weight: 400;
 }
 
-.details__bold {
+.details__bold--met {
   font-size: 1rem;
   font-weight: 600;
+}
+
+.details__bold--imp {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.welcome__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.welcome__description {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .wrappers__means {

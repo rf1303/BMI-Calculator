@@ -24,24 +24,24 @@
         <nav class="heads__below"> 
             <h2 class="below__title">Enter your details below</h2> 
             <section class="below__option"> 
-                <label for="metric" class="below__radios">
-                    <input type="radio" id="metric" name="metric" class="below__radio" checked>Metric
+                <label for="metric" class="below__radios" >
+                    <input type="radio" id="metric" name="metric" class="below__radio" value='metric' checked>Metric
                 </label>
                 <label for="imperial" class="below__radios">
-                    <input type="radio" id="imperial" name="metric" class="below__radio" >Imperial
+                    <input type="radio" id="imperial" name="metric" class="below__radio" value="imperial" >Imperial
                 </label>
             </section>
 <!-- ######## METRIC ############ -->
             <section class="below__details below__details--metric "> <!-- display__none  -->
                 <label for="height" class="below__dates">Height
                     <div class="below__box"> 
-                        <input type="text" id="height" class="below__inputs">
+                        <input type="number" id="height" class="below__inputs">
                         <span class="below__units">cm</span>
                     </div>
                 </label> 
                 <label for="weight" class="below__dates">Weight
                     <div class="below__box"> 
-                        <input type="text" id="weight" class="below__inputs">
+                        <input type="number" id="weight" class="below__inputs">
                         <span class="below__units">kg</span>
                     </div>
                 </label> 
@@ -51,13 +51,13 @@
                 <section class="below__imperial"> 
                     <label for="height-ft" class="below__dates-i">Height
                         <div class="below__box-i"> 
-                            <input type="text" id="height-ft" class="below__inputs-i">
+                            <input type="number" id="height-ft" class="below__inputs-i">
                             <span class="below__units">ft</span>
                         </div>
                     </label> 
                     <label for="height-in" class="below__dates-i">
                         <div class="below__box-i"> 
-                            <input type="text" id="height-in" class="below__inputs-i">
+                            <input type="number" id="height-in" class="below__inputs-i">
                             <span class="below__units">in</span>
                         </div>
                     </label> 
@@ -65,13 +65,13 @@
                 <section class="below__imperial"> 
                     <label for="weight-st" class="below__dates-i">Weight
                         <div class="below__box-i"> 
-                            <input type="text" id="weight-st" class="below__inputs-i">
+                            <input type="number" id="weight-st" class="below__inputs-i">
                             <span class="below__units">st</span>
                         </div>
                     </label> 
                     <label for="weight-lb" class="below__dates-i">
                         <div class="below__box-i"> 
-                            <input type="text" id="weight-lb" class="below__inputs-i">
+                            <input type="number" id="weight-lb" class="below__inputs-i">
                             <span class="below__units">lbs</span>
                         </div>
                     </label> 
@@ -79,15 +79,15 @@
             </section>
 
             <section class="below__results"> 
-                <section class="results__head"> 
+                <section class="results__head display__none"> 
                    <h3 class="results__title">Your BMI is...</h3>
                    <span class="results__score">22.5</span>
                 </section>   
-                <section class="results__details"> 
-                        <p class="details__metric">Your BMI suggests you're a healthy weight. Your ideal weight is beetween <span class="details__bold">63.3</span>kgs - <span class="details__bold">85.2</span>Kgs.</p>
-                        <p class="details__imperial display__none">Your BMI suggests you're a healthy weight. Your ideal weight is beetween <span class="details__bold">63.3</span>kgs - <span class="details__bold">85.2</span>Kgs.</p>
+                <section class="results__details display__none"> 
+                        <p class="details__metric">Your BMI suggests you're a healthy weight. Your ideal weight is beetween <span class="details__bold--met">63.3kgs - 85.2Kgs.</span></p>
+                        <p class="details__imperial display__none">Your BMI suggests you're a healthy weight. Your ideal weight is beetween <span class="details__bold--imp">9st 6lbs - 12st 10lbs.</span></p>
                 </section>
-                <section class="below__welcome display__none"> 
+                <section class="below__welcome "> <!-- display__none --> 
                     <h3 class="welcome__title">Welcome!</h3>
                     <p class="welcome__description "> 
                         Enter your height and weight and see you'll see your BMI relult here

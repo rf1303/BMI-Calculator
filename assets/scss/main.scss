@@ -3,8 +3,6 @@
 @use './mixin' as *;
 @use './font-face' as *;
 
-// @include fontFace('interR', '../fonts/static/Inter-Regular.woff2', 400);
-// @include fontFace('interSM', '../fonts/static/Inter-SemiBold.woff2', 600);
 @include fontFace('inter', '../fonts/Inter-VariableFont_slnt,wght.woff2', 100 900);
 
 body {
@@ -173,8 +171,21 @@ body {
   @include tgSize($text-7, 400);
 }
 
-.details__bold {
+.details__bold--met {
   @include tgSize($text-6, 600);
+}
+.details__bold--imp {
+  @include tgSize($text-6, 600);
+}
+
+.welcome__title {
+  @include tgSize($text-4, 600);
+  color: $white-color;
+}
+
+.welcome__description {
+  @include tgSize($text-7, 400);
+  color: $white-color;
 }
 
 .wrappers__means {
