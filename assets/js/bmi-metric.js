@@ -16,24 +16,26 @@ export function bmiMetric() {
 }
 
 function calcMetric(height,weight) {
+    const heightM = height / 100;
+    const bmiResult = (weight / (heightM * heightM)).toFixed();
+    const resultMax = (24.9 * (heightM ** 2)).toFixed(1);
+    const resultMin = (18.5 * (heightM ** 2)).toFixed(1);
+    console.log('bmiResult:',bmiResult,' resultMin: ',resultMin,' resultMax: ',resultMax);
+
+    resultPrint(bmiResult, resultMin, resultMax)
+}
+
+function resultPrint(bmi, rMin, rMax) {
     const belowWelcome = document.querySelector('.below__welcome');
     const resultHead = document.querySelector('.results__head');
     const resultScore = document.querySelector('.results__score');
     const resultDetail = document.querySelector('.results__details');
     const metricDetail = document.querySelector('.details__bold--met');
-    const heightM = height / 100;
-    const bmiResult = (weight / (heightM * heightM)).toFixed();
-    const resultPlus = (24.9 * (heightM ** 2)).toFixed(1);
-    const resultMinus = (18.5 * (heightM ** 2)).toFixed(1);
-    console.log('bmiResult:',bmiResult,' resultMinus: ',resultMinus,' resultPlus: ',resultPlus);
-
+      
     belowWelcome.classList.add('display__none');
     resultHead.classList.remove('display__none');
     resultDetail.classList.remove('display__none');
-    resultScore.textContent = `${bmiResult}`;
-    metricDetail.textContent = `${resultMinus}Kgs - ${resultPlus}Kgs.`;
+    resultScore.textContent = `${bmi}`;
+    metricDetail.textContent = `${rMin}Kgs - ${rMax}Kgs.`;
 }
 
-// function calculateBMIMetric(weightKg, heightCm) {
-//   const heightM = heightCm / 100; // Convertir cm a metros
-// }
