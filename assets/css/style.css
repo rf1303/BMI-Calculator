@@ -563,7 +563,8 @@ body {
   .means__image {
     block-size: min(35.25rem, 100%);
     object-fit: cover;
-    padding-block: 1.5rem;
+    padding-block: 2rem;
+    margin-block-start: 3rem;
   }
   .image__avatar {
     block-size: min(35.25rem, 100%);

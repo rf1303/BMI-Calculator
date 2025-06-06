@@ -479,7 +479,8 @@ body {
   .means__image {
     block-size: min(35.25rem, 100%);
     object-fit: cover;
-    padding-block: $space-300;
+    padding-block: $space-400;
+    margin-block-start: $space-600;
   }
   .image__avatar {
     block-size: min(35.25rem, 100%);
