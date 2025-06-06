@@ -139,6 +139,7 @@ body {
   font-weight: 600;
   color: #253347;
   text-align: center;
+  cursor: pointer;
 }
 
 .below__radio {
@@ -149,6 +150,11 @@ body {
   border: 1px solid #5e6e85;
   box-shadow: 0.3px 0.3px 5px rgba(0, 0, 0, 0.3) inset, -0.3px -0.3px 4px rgba(0, 0, 0, 0.3) inset;
   border-radius: 50%;
+}
+.below__radio:hover, .below__radio:focus {
+  border: 1px solid #345ff6;
+  box-shadow: 0.3px 0.3px 5px rgba(52, 95, 246, 0.5) inset, -0.3px -0.3px 4px rgba(52, 95, 246, 0.5) inset;
+  cursor: pointer;
 }
 
 .below__radio:checked {
@@ -185,6 +191,13 @@ body {
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin-block-start: 0.5rem;
+}
+.below__box-i:hover, .below__box-i:focus,
+.below__box:hover,
+.below__box:focus {
+  border: 1px solid #345ff6;
+  box-shadow: 0.3px 0.3px 5px rgba(52, 95, 246, 0.5) inset, -0.3px -0.3px 4px rgba(52, 95, 246, 0.5) inset;
+  cursor: pointer;
 }
 
 .below__units {
@@ -607,6 +620,30 @@ body {
     grid-area: race;
     block-size: min(14.5rem, 100%);
     inline-size: min(22.813rem, 100%);
+  }
+}
+@media (max-width: 21.875em) {
+  .heads__below {
+    padding-inline: 0.25rem;
+  }
+  .heads__title {
+    font-size: clamp(2rem, 0.5556rem + 8.8889vw, 2.5rem);
+  }
+  .heads__subtitle {
+    font-size: clamp(0.8625rem, 0.4653rem + 2.4444vw, 1rem);
+  }
+  .below__box-i,
+  .below__box {
+    padding-inline: 0.25rem;
+  }
+  .below__dates {
+    inline-size: clamp(15rem, 12.1111rem + 17.7778vw, 16rem);
+  }
+  .below__results {
+    inline-size: clamp(15rem, 12.1111rem + 17.7778vw, 16rem);
+  }
+  .below__title {
+    font-size: clamp(1.1rem, 0.5222rem + 3.5556vw, 1.3rem);
   }
 }
 

@@ -64,6 +64,7 @@ body {
   @include tgSize($text-6, 600);
   color: $blue900;
   text-align: center;
+  cursor: pointer;
 }
 
 .below__radio {
@@ -74,6 +75,13 @@ body {
   border: 1px solid $grey500;
   box-shadow: .3px .3px 5px rgba(0, 0, 0, .3) inset, -.3px -.3px 4px rgba(0, 0, 0, .3) inset;
   border-radius: 50%;
+  &:hover,
+  &:focus {
+    border: 1px solid $blue500;
+    box-shadow: .3px .3px 5px rgba($blue500, .5) inset, -.3px -.3px 4px rgba($blue500, .5) inset;
+    cursor: pointer;
+  }
+
 }
 
 .below__radio:checked {
@@ -110,6 +118,12 @@ body {
   border-radius: $space-150;
   padding: $space-300;
   margin-block-start: $space-100; 
+  &:hover,
+  &:focus {
+    border: 1px solid $blue500;
+    box-shadow: .3px .3px 5px rgba($blue500, .5) inset, -.3px -.3px 4px rgba($blue500, .5) inset;
+    cursor: pointer;
+  }
 }
 
 .below__units {
@@ -526,7 +540,31 @@ body {
     inline-size: min(22.813rem, 100%);
   }
 }
-
+@media (max-width: 21.875em) {
+    
+  .heads__below {
+    padding-inline: $space-50;
+  }
+  .heads__title {
+    font-size: clamp(2rem, 0.5556rem + 8.8889vw, 2.5rem);
+  }
+  .heads__subtitle {
+    font-size: clamp(0.8625rem, 0.4653rem + 2.4444vw, 1rem);
+  }
+  .below__box-i,
+  .below__box {
+    padding-inline: $space-50;
+  }
+  .below__dates {
+    inline-size: clamp(15rem, 12.1111rem + 17.7778vw, 16rem); 
+  }
+  .below__results {
+    inline-size: clamp(15rem, 12.1111rem + 17.7778vw, 16rem); 
+  }
+  .below__title {
+    font-size: clamp(1.1rem, 0.5222rem + 3.5556vw, 1.3rem);
+  }
+}
 
 
 
