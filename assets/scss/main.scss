@@ -192,9 +192,13 @@ body {
 }
 
 .below__welcome {
-  inline-size: 100%;
+  inline-size: clamp(17.5rem, 0.25rem + 65.714vw, 29rem); 
+  background-color: $blue500;
+  border-radius: $space-200;
+  color: $white-color;
   display: grid;
-  gap: $space-200;
+  gap: $space-300;
+  padding: $space-400;
 }
 
 .welcome__title {
@@ -203,7 +207,7 @@ body {
 }
 
 .welcome__description {
-  @include tgSize($text-7, 400);
+  @include tgSize($text-7, 300);
   color: $white-color;
 }
 
@@ -354,6 +358,14 @@ body {
     justify-items: start;
     align-items: center;
   }
+  .below__welcome {
+    inline-size: 100%;
+    border-radius: $space-175 $space-1300 $space-1300 $space-175;
+    gap: $space-50;
+    justify-items: start;
+    align-items: center;
+  }
+
   .wrappers__means {
     inline-size: 52.563rem;
     grid-template-columns: 27.813rem 20.688rem;
@@ -425,7 +437,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(35.25rem, 1fr));
     justify-items: start;
-    align-items: star;
+    align-items: start;
     gap: $space-400;
     margin-inline: auto;
   }  

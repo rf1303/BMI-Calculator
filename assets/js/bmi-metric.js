@@ -27,7 +27,7 @@ export function resultPrint(bmi, rMin, rMax) {
 
     const belowRadio = document.querySelector('.below__radio:checked');
     const belowWelcome = document.querySelector('.below__welcome');
-    const resultHead = document.querySelector('.results__head');
+    const resultHead = document.querySelector('.below__results');
     const resultScore = document.querySelector('.results__score');
     const resultDetail = document.querySelector('.results__details');
     const detailBoldMet = document.querySelector('.details__bold--met');
