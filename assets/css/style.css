@@ -273,6 +273,12 @@ body {
   font-weight: 600;
 }
 
+.below__welcome {
+  inline-size: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
 .welcome__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -556,9 +562,11 @@ body {
   }
   .means__image {
     block-size: min(35.25rem, 100%);
+    object-fit: cover;
+    padding-block: 1.5rem;
   }
   .image__avatar {
-    block-size: min(29.25rem, 100%);
+    block-size: min(35.25rem, 100%);
     object-fit: contain;
   }
   .means__descriptions {
